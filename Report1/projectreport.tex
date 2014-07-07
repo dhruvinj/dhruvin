@@ -29,6 +29,38 @@ Where $\tau^*$ is the viscous stresses. $g^*$ is the gravity vector. $c_p^*$ is 
 $\tau^* = \mu^*(\nabla u^* +(\nabla u^*)^t)) - \frac{2}{3}\mu^*\nabla. u^* I$ \\
 Assuming Fourier's law $q=-k \nabla T$.\\
 $\mu^*$ is the viscocity and $k$ is the thermal conductivity.
+\subsection{Non dimensionalisation}
+
+The goal is to perform asymptotic analysis based on low mach number. we first nondimensionalize the governing equation by introduction of following scaling \\
+
+$ x=\frac{x^*}{L}, \rho = \frac{\rho^*}{\rho_\infty}$, $p = \frac{p^*}{p_\infty} $, $u = \frac{u^*}{u_\infty} $, $T = \frac{T^*}{T_\infty} $, $\mu = \frac{\mu^*}{\mu_\infty} $, $k = \frac{k^*}{k_\infty} $,$c_p = \frac{c_p^*}{c_{p_\infty}}$, $ t = \frac{t^*}{L^*/u_{\infty}} $, $ \beta = \frac{\beta^*}{\beta_{\infty}}$\\
+Now the derivatives are non dimensionalized as follows \\
+$\frac{\partial}{\partial x^*}=\frac{1}{L}\frac{\partial}{\partial x},\frac{\partial}{\partial t^*}=\frac{u_0}{L}\frac{\partial}{\partial t} , \frac{D}{D t^*}=\frac{u_0}{L}\frac{D}{D t} $  \\
+Substituting these values in mass, momentum and energy conservation equations respectively we develop following equations \\
+$\frac{\rho_\infty u_\infty}{L}\frac{D \rho}{D t}\hspace{1mm}+\hspace{1mm}+\frac{\rho_\infty u_\infty}{L}\rho \nabla\cdot u = 0$ \\
+$\frac{\rho_\infty u_\infty^2}{L}\rho\frac{D u}{D t}\hspace{1mm} =\hspace{1mm}-\frac{p_\infty}{L}\nabla p +\hspace{1mm}\frac{\mu_\infty u_\infty}{L^2}\nabla\cdot\tau \hspace{1mm}+\hspace{1mm}\rho_\infty g_\infty \rho g$ \\
+$\frac{\rho_\infty c_{p_\infty} u_\infty T_\infty }{L} \rho c_p \frac{D T}{D t}\hspace{1mm}-\hspace{1mm}\frac{\beta_\infty p_\infty u_\infty T_\infty }{L} \beta T \frac{D p}{D t} \hspace{1mm} = \hspace{1mm} \frac{\mu_\infty u_\infty^2}{L^2} \tau \cdot\nabla u  + \frac{k_\infty T_\infty}{L^2} \hspace{1mm} \nabla \cdot q$ \\
+The mass, momentum and energy equations are now rewritten as follows \\
+$\frac{D \rho}{D t}\hspace{1mm}+\hspace{1mm}+ \rho \nabla\cdot u = 0$ \\
+$\rho\frac{D u}{D t}\hspace{1mm} =\hspace{1mm}-\frac{p_\infty}{\rho_\infty u_\infty^2}\nabla p +\hspace{1mm}\frac{\mu_\infty}{\rho_\infty u_\infty L}\nabla\cdot\tau \hspace{1mm}+\hspace{1mm}\frac{g_\infty L}{u_\infty^2} \rho g$ \\
+$ \rho c_p \frac{D T}{D t}\hspace{1mm}-\hspace{1mm}\frac{\beta_\infty p_\infty}{\rho_\infty c_{p_\infty}} \beta T \frac{D p}{D t} \hspace{1mm} = \hspace{1mm} \frac{\mu_\infty u_\infty}{\rho_\infty c_{p_\infty} T_\infty L} \tau \cdot\nabla u  + \frac{k_\infty}{\rho_\infty c_{p_\infty} u_\infty L} \hspace{1mm} \nabla \cdot q$ \\
+We write these equations in terms of various non dimensional number defined as follows
+
+$M=\frac{u_\infty}{a_\infty}$, $Re=\frac{\rho_\infty u_\infty L}{\mu_\infty}$, $Pr=\frac{\mu_\infty c_{p_\infty}}{k_\infty}$,$F=\frac{u_\infty}{\sqrt{g_\infty L}}$ \\
+Note that by definition \\
+$\beta^* = -\frac{1}{\rho^*} \frac{\partial \rho^*}{\partial T^*}= \frac{1}{T_\infty }\beta$ thus $\beta_\infty = \frac{1}{T_\infty}$ \\
+By definition ${a^*}^2=\frac{\partial p^*}{\partial \rho^*}=\frac{p_\infty}{\rho_\infty}a^2$ \hspace{1mm} where \hspace{1mm} $a_\infty=\sqrt{p_\infty/\rho_\infty}$ 
+
+We will also define $\lambda = \frac{c_{p_\infty} T_\infty}{a_\infty^2}$
+
+Now the mass momentum and energy equations are written as follows
+
+\begin{eqnarray}
+\frac{D \rho}{D t}\hspace{1mm}+\hspace{1mm}+ \rho \nabla\cdot u &=& 0 \\
+\rho\frac{D u}{D t}\hspace{1mm} &=&\hspace{1mm}-\frac{1}{M^2}\nabla p +\hspace{1mm}\frac{1}{Re}\nabla\cdot\tau \hspace{1mm}+\hspace{1mm}\frac{1}{F^2} \rho g \\
+ \rho c_p \frac{D T}{D t}\hspace{1mm}-\hspace{1mm}\frac{1}{\lambda} \beta T \frac{D p}{D t} \hspace{1mm} &=& \hspace{1mm} \frac{M^2}{Re \lambda} \tau \cdot\nabla u  + \frac{1}{RePr} \hspace{1mm} \nabla \cdot q
+\end{eqnarray}
+
 \section{Introduction}
 \section{Governing Equations}
 \subsection{Problem definition}
