@@ -61,6 +61,67 @@ Now the mass momentum and energy equations are written as follows
  \rho c_p \frac{D T}{D t}\hspace{1mm}-\hspace{1mm}\frac{1}{\lambda} \beta T \frac{D p}{D t} \hspace{1mm} &=& \hspace{1mm} \frac{M^2}{Re \lambda} \tau \cdot\nabla u  + \frac{1}{RePr} \hspace{1mm} \nabla \cdot q
 \end{eqnarray}
 
+\subsection{Asymptotic Analysis}
+
+The limit when the Mach number tends to zero can be found using standard
+procedures of asymptotic analysis described. The first step
+is to expand all flow variables in power series of the small parameter considered 
+
+$\xi(x,t,M)=\xi^{(0)}(x,t)+M\xi^{(1)}(x,t)+M^2\xi^{(2)}(x,t)+ O(M^3)$
+
+Where $\xi$ can be pressure $p$, density $\rho$, velocity $u$ and temperature $T$. 
+
+Some asymptotic expansion of equation is shown below. \\
+
+$\frac{D \rho}{D t}\hspace{1mm}+\hspace{1mm}+ \rho \nabla\cdot u = 0$ is expanded asymptotically as 
+
+$\frac{D \rho}{D t}=\frac{\partial}{\partial t}(\rho^{(0)}+M\rho^{(1)}+M^2\rho^{(2)}+O(M^3))\hspace{1mm}+\hspace{1mm} \left( u^{(0)}+Mu^{(1)}+M^2u^{(2)}+O(M^3)\right) \nabla \left( \rho^{(0)}+M\rho^{(1)}+M^2\rho^{(2)}+O(M^3) \right)$
+
+Combining zero order terms, first order terms we get the following expression \\
+$\frac{D \rho}{D t} = \frac{\partial \rho^{(0)}}{\partial t} + u^0.\nabla \rho^0 + M \left( \frac{\partial \rho^{(1)}}{\partial t} + u^0.\nabla \rho^1 + u^1.\nabla \rho^o \right) + O(M^2)$
+
+$\rho \nabla\cdot u = (\rho^{(0)}+M\rho^{(1)}+M^2\rho^{(2)}+O(M^3) \nabla \cdot ( u^{(0)}+Mu^{(1)}+M^2u^{(2)}+O(M^3)$
+
+Again combining zero order terms together 
+
+$\rho \nabla\cdot u = \rho^{(0)} \nabla \cdot u^{(0)} + M (\rho^{(1)} \nabla \cdot u^{(0)}+\rho^{(0)} \nabla \cdot u^{(1)}) + O (M^2)$ \\ 
+Thus we have the following zero order $O(M^0)$ for mass equation
+
+\begin{eqnarray}
+\frac{D \rho^0}{D t} + \rho^{(0)} \nabla \cdot u^{(0)} &=& 0
+\end{eqnarray}
+
+Next we will consider momentum equation  \\
+$\rho\frac{D u}{D t} = \rho^{(0)}+M\rho^{(1)}+M^2\rho^{(2)}+O(M^3) \left(\frac{\partial}{\partial t}(u^{(0)}+Mu^{(1)}+M^2u^{(2)}+O(M^3))\hspace{1mm}+\hspace{1mm} \left( u^{(0)}+Mu^{(1)}+M^2u^{(2)}+O(M^3)\right) \nabla \left( u^{(0)}+Mu^{(1)}+M^2u^{(2)}+O(M^3) \right)\right) $
+
+Combining zero order terms, first order terms we get the following expression \\
+
+$\rho\frac{D u}{D t} =\rho^0 \frac{D u^0}{D t} + M \left( \rho^1 \frac{D u^0}{D t} + \rho^0 \frac{\partial u^1}{\partial t}+ \rho^0 u^0 . \nabla u^1 +\rho^0 u^1 . \nabla u^0\right) + O(M^2) $
+
+$\frac{1}{M^2}\nabla p = \frac{1}{M^2} \nabla p^{(0)}+Mp^{(1)}+M^2p^{(2)}+O(M^3)$
+
+$\frac{1}{M^2}\nabla p = \frac{1}{M^2}\nabla p^0 + \frac{1}{M}\nabla p^1 + \nabla p^2$
+
+If we want pressure to behave in $\lim_{M \to 0}$ we get $p^0=p^0(t)$ and $p^1=p^1(t)$.
+
+$\frac{1}{Re}\nabla\cdot\tau = \frac{1}{Re}\nabla\cdot\tau^0 +\frac{M}{Re}\nabla\cdot\tau^1 +O(M^2)$
+
+Thus we have the following zero order $O(M^0)$ for momentum equation
+ \begin{eqnarray}
+ \rho^0 \frac{D u^0}{D t}\hspace{1mm} &=&\hspace{1mm}-\nabla p^2 +\hspace{1mm}\frac{1}{Re}\nabla\cdot\tau^0 \hspace{1mm}+\hspace{1mm}\frac{1}{F^2} \rho^0 g 
+ \end{eqnarray}
+ 
+ The energy equation is also asymptotically expanded in the same way as mass and momentum equation. However we have already seen that $p^0=p^0(t)$ and $p^1=p^1(t)$. Therefore \\
+ $\frac{Dp^0}{Dt}= \frac{dp^0}{dt}$. \\
+ The visous dissipation term is already $O(M^2)$.
+ 
+$q=k \nabla T = (k^{(0)}+Mk^{(1)}+M^2k^{(2)}+O(M^3)) \nabla (T^{(0)}+MT^{(1)}+M^2T^{(2)}+O(M^3))$ \\
+Combining similar order terms together \\
+$\nabla . q =  \nabla . (k^{(0)} \nabla T^{(0)}) + O(M)$. \\
+Thus we have following zero order energy equation
+\begin{eqnarray}
+ \rho^0 c_p^0 \frac{D T^0}{D t}\hspace{1mm}-\hspace{1mm}\frac{1}{\lambda} \beta^0 T^0 \frac{d p^0}{d t} \hspace{1mm} &=& \hspace{1mm} \frac{1}{RePr} \hspace{1mm} \nabla \cdot (k^{(0)} \nabla T^{(0)})
+\end{eqnarray}
 \section{Introduction}
 \section{Governing Equations}
 \subsection{Problem definition}
