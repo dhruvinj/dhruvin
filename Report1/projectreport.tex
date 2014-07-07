@@ -14,6 +14,21 @@
 \maketitle
 \begin{abstract}
 \end{abstract}
+\section{Governing Equations}
+\subsection{Problem definition}
+
+The flow of a compressible fluid is described in terms of the velocity $(u)$, pressure $(p)$, density $(\rho)$, and temperature$(T)$ fields. These fields are solutions of the compressible Navier Stokes equations that describe the dynamics of the system
+and that are statements of conservation of mass, momentum and energy. The classical compressible navier stokes equation is written as \\
+\begin{eqnarray}
+\frac{D \rho^*}{D t^*}\hspace{1mm}+\hspace{1mm}\rho^*\nabla\cdot u^* &=& 0 \\
+\rho^*\frac{D u^*}{D t^*}\hspace{1mm} &=&\hspace{1mm}-\nabla p^*+\hspace{1mm}\nabla\cdot\tau^*\hspace{1mm}+\hspace{1mm}\rho^* g^* \\
+\rho^* c_p^* \frac{D T^*}{D t^*}\hspace{1mm}-\hspace{1mm}\beta^*T^* \frac{D p^*}{D t^*}\hspace{1mm}&=& \hspace{1mm} \tau^*\cdot\nabla u^*  + \hspace{1mm}\nabla\cdot q^* \\
+\end{eqnarray}
+
+Where $\tau^*$ is the viscous stresses. $g^*$ is the gravity vector. $c_p^*$ is the specific heat at constant pressure, $\beta^*$ is the thermal expansion coefficient , $q^*$ is the heat flux vector. For a newtonian fluid \\
+$\tau^* = \mu^*(\nabla u^* +(\nabla u^*)^t)) - \frac{2}{3}\mu^*\nabla. u^* I$ \\
+Assuming Fourier's law $q=-k \nabla T$.\\
+$\mu^*$ is the viscocity and $k$ is the thermal conductivity.
 \section{Introduction}
 \section{Governing Equations}
 \subsection{Problem definition}
